@@ -1,18 +1,11 @@
 import streamlit as st
 
-# Page title
-st.title("📊 Simple Streamlit Dashboard")
-
-# Prompt input
+st.title("Powerpoint Generator")
 prompt = st.text_input("Enter your prompt:")
-
-# File uploader (PDF, DOCX, PPTX, TXT, etc.)
 uploaded_file = st.file_uploader(
     "Upload a document (pdf, docx, pptx, txt)", 
     type=["pdf", "docx", "pptx", "txt"]
 )
-
-# Number input for slides
 num_slides = st.number_input(
     "Number of slides to generate:", 
     min_value=1, 
@@ -20,8 +13,6 @@ num_slides = st.number_input(
     value=5, 
     step=1
 )
-
-# Submit button
 if st.button("Generate"):
     st.write("### 🔹 Input Summary")
     st.write(f"**Prompt:** {prompt}")
